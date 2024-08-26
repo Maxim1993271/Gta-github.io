@@ -1,0 +1,189 @@
+/* Основной стиль для всего сайта */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://kartinki.pics/uploads/posts/2021-07/1625682359_2-kartinkin-com-p-gta-san-andreas-oboi-krasivie-2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Стили для шапки сайта */
+header {
+    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для шапки */
+    box-sizing: border-box; /* Включить padding в ширину элемента */
+    margin-right: 20px; /* Добавить отступ справа для смещения влево */
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 2rem;
+    color: #FE8B16; /* Цвет заголовка */
+    font-family: 'Roboto', sans-serif; /* Шрифт для заголовка */
+    letter-spacing: 1px;
+}
+
+nav {
+    flex: 1;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-list li {
+    margin: 0;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #FE8B16; /* Цвет фона при наведении */
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    font-size: 24px;
+    color: #fff;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover .social-icon {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+/* Опционально: можно добавить стили для доступности */
+.social-icons a {
+    display: inline-block;
+}
+
+/* Стили для контентной области */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Контейнер для информации о игре */
+.game-container,
+.project-info {
+    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project h4 {
+    margin: 20px 0 10px; /* Отступ сверху и снизу для заголовков */
+}
+
+/* Стили для списка модов */
+.mods-list {
+    list-style-type: none; /* Убираем маркеры */
+    padding: 0; /* Убираем отступы */
+    margin: 0; /* Убираем внешние отступы */
+    text-align: left; /* Выравнивание текста по левому краю */
+    display: inline-block; /* Выравнивание списка по центру */
+}
+
+ul.mods-list li {
+    margin-bottom: 10px; /* Добавляем пробел между элементами списка */
+}
+
+ul.mods-list li a {
+    text-decoration: none; /* Убирает подчеркивание ссылок */
+    color: inherit; /* Наследует цвет текста от родительского элемента */
+}
+
+
+/* Стили для кнопок "Download" */
+.btn-download {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #fff; /* Цвет текста кнопки */
+    background: #FE8B16; /* Основной цвет фона кнопки */
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-download:hover {
+    background: #e67e22; /* Цвет фона кнопки при наведении */
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Стили для подвала */
+footer {
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.custom-list {
+    padding-left: 20px; /* Отступ слева для списка */
+}
+
+.custom-list li {
+    margin-bottom: 15px; /* Пробел между элементами списка */
+}
+ul.no-bullets {
+    list-style-type: none; /* Убирает маркеры */
+    padding: 0; /* Убирает отступы */
+    margin: 0; /* Убирает внешние отступы */
+}
+
+ul.no-bullets li {
+    margin-bottom: 10px; /* Добавляет отступ между элементами списка, если нужно */
+}
