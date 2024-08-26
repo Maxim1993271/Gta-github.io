@@ -141,7 +141,6 @@ ul.mods-list li a {
 }
 
 
-/* Стили для кнопок "Download" */
 .btn-download {
     display: inline-block;
     padding: 10px 20px;
@@ -161,6 +160,7 @@ ul.mods-list li a {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 138, 0, 0.7); /* Усиленный неоновый эффект */
     filter: brightness(1.1); /* Яркость при наведении */
 }
+
 
 /* Стили для подвала */
 footer {
