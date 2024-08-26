@@ -148,17 +148,18 @@ ul.mods-list li a {
     margin-top: 10px;
     font-size: 16px;
     color: #fff; /* Цвет текста кнопки */
-    background: #FE8B16; /* Основной цвет фона кнопки */
+    background: linear-gradient(145deg, #FE8B16, #f36f6f); /* Яркий градиент */
     text-decoration: none;
     border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 138, 0, 0.5); /* Неоновый эффект */
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s, filter 0.3s;
 }
 
 .btn-download:hover {
-    background: #e67e22; /* Цвет фона кнопки при наведении */
+    background: linear-gradient(145deg, #f36f6f, #FE8B16); /* Перемена градиента при наведении */
     transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 138, 0, 0.7); /* Усиленный неоновый эффект */
+    filter: brightness(1.1); /* Яркость при наведении */
 }
 
 /* Стили для подвала */
