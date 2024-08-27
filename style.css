@@ -20,7 +20,6 @@ header {
     margin-right: 20px; /* Добавить отступ справа для смещения влево */
 }
 
-
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -62,12 +61,13 @@ nav {
     font-size: 1rem;
     font-weight: bold;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 20px; /* Закругление кнопок навигации */
+    background-color: #FE8B16; /* Цвет фона кнопок навигации */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-list a:hover {
-    background-color: #FE8B16; /* Цвет фона при наведении */
+    background-color: #e67e22; /* Цвет фона при наведении */
     color: #fff;
 }
 
@@ -118,10 +118,6 @@ main {
     border-radius: 8px;
 }
 
-.project h4 {
-    margin: 20px 0 10px; /* Отступ сверху и снизу для заголовков */
-}
-
 /* Стили для списка модов */
 .mods-list {
     list-style-type: none; /* Убираем маркеры */
@@ -140,27 +136,25 @@ ul.mods-list li a {
     color: inherit; /* Наследует цвет текста от родительского элемента */
 }
 
-
+/* Стили для кнопок "Download" */
 .btn-download {
     display: inline-block;
     padding: 10px 20px;
     margin-top: 10px;
     font-size: 16px;
     color: #fff; /* Цвет текста кнопки */
-    background: linear-gradient(145deg, #FE8B16, #f36f6f); /* Яркий градиент */
+    background: #FE8B16; /* Основной цвет фона кнопки */
     text-decoration: none;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 0 10px rgba(255, 138, 0, 0.5); /* Неоновый эффект */
-    transition: background 0.3s, transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    border-radius: 20px; /* Закругление кнопок */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-download:hover {
-    background: linear-gradient(145deg, #f36f6f, #FE8B16); /* Перемена градиента при наведении */
+    background: #e67e22; /* Цвет фона кнопки при наведении */
     transform: scale(1.05);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 138, 0, 0.7); /* Усиленный неоновый эффект */
-    filter: brightness(1.1); /* Яркость при наведении */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 /* Стили для подвала */
 footer {
@@ -179,6 +173,7 @@ footer {
 .custom-list li {
     margin-bottom: 15px; /* Пробел между элементами списка */
 }
+
 ul.no-bullets {
     list-style-type: none; /* Убирает маркеры */
     padding: 0; /* Убирает отступы */
@@ -187,4 +182,49 @@ ul.no-bullets {
 
 ul.no-bullets li {
     margin-bottom: 10px; /* Добавляет отступ между элементами списка, если нужно */
+}
+
+/* Основные стили для контейнера с бегущей строкой */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: /* Указан корректный цвет фона */
+    text-align: center;
+}
+
+/* Стили для текста бегущей строки */
+.marquee-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 10px 0;
+    animation: marquee 30s linear infinite;
+}
+
+/* Анимация бегущей строки */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Стили для кнопок "Download" */
+.btn-download {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: #FE8B16;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+/* Стили для кнопок "Download" при наведении */
+.btn-download:hover {
+    background: #e67e22; /* Обновленный цвет фона при наведении */
+}
+
+/* Стили для списков без маркеров */
+.no-bullets {
+    list-style: none;
+    padding: 0;
 }
