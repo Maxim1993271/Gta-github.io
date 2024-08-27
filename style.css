@@ -189,7 +189,7 @@ ul.no-bullets li {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: /* Указан корректный цвет фона */
+    background-color: #000; /* Укажите цвет фона */
     text-align: center;
 }
 
@@ -199,6 +199,7 @@ ul.no-bullets li {
     white-space: nowrap;
     padding: 10px 0;
     animation: marquee 30s linear infinite;
+    width: 100%;
 }
 
 /* Анимация бегущей строки */
