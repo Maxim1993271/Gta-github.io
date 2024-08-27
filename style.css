@@ -189,7 +189,7 @@ ul.no-bullets li {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: #000; /* Укажите цвет фона */
+    background-color: /* Укажите цвет фона */
     text-align: center;
 }
 
