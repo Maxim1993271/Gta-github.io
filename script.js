@@ -34,8 +34,20 @@ const setupHeaderClick = () => {
 
 // Функция для открытия всплывающего окна
 const openPopup = () => {
-    window.open("https://example.com", "popupWindow", "width=600,height=400,scrollbars=yes");
+    // Параметры окна
+    const url = "https://example.com";
+    const name = "popupWindow";
+    const features = "width=600,height=400,scrollbars=yes";
+
+    // Попытка открыть окно
+    const popupWindow = window.open(url, name, features);
+
+    // Проверка, что окно успешно открылось
+    if (!popupWindow) {
+        alert("Не удалось открыть всплывающее окно. Проверьте настройки блокировки всплывающих окон.");
+    }
 };
+
 
 // Инициализация функций при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
