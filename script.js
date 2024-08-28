@@ -5,8 +5,8 @@ const refreshPage = () => {
 
 // Функция для показа кнопки "Наверх" и её обработчика
 const setupScrollToTopButton = () => {
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn'); // Убедитесь, что у вас правильный идентификатор кнопки
-    if (!scrollToTopBtn) return; // Раннее завершение, если кнопка не найдена
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    if (!scrollToTopBtn) return; // Если кнопка не найдена, завершаем выполнение функции
 
     // Показ кнопки при прокрутке
     window.addEventListener('scroll', () => {
@@ -30,28 +30,26 @@ const setupHeaderClick = () => {
     }
 };
 
+// Функция для открытия всплывающего окна
 const openPopup = () => {
     const url = "https://example.com";
     const name = "popupWindow";
     const features = "width=600,height=400,scrollbars=yes";
 
-    let popupWindow;
     try {
-        popupWindow = window.open(url, name, features);
+        // Открываем окно
+        const popupWindow = window.open(url, name, features);
 
-        if (popupWindow) {
-            popupWindow.focus();
-            if (popupWindow.location.href === "about:blank") {
-                console.error("Всплывающее окно было заблокировано. Проверьте настройки браузера.");
-            }
+        // Проверяем, успешно ли открыто окно
+        if (popupWindow && !popupWindow.closed && typeof popupWindow.closed !== 'undefined') {
+            popupWindow.focus(); // Делаем окно активным
         } else {
             console.error("Не удалось открыть всплывающее окно. Проверьте настройки блокировки всплывающих окон.");
         }
     } catch (e) {
-        console.error("Не удалось открыть всплывающее окно:", e);
+        console.error("Не удалось открыть всплывающее окно:", e.message);
     }
 };
-
 
 // Инициализация функций при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
