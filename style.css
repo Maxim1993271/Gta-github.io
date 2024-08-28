@@ -285,9 +285,9 @@ ul.no-bullets li {
 
 /* Мобильные устройства */
 @media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
+    header {
+        margin-right: 0; /* Убираем отступ справа на мобильных устройствах */
+        padding: 10px; /* Можно также уменьшить внутренние отступы для мобильных устройств, если нужно */
     }
 
     .nav-list {
@@ -316,4 +316,3 @@ ul.no-bullets li {
         font-size: 20px;
     }
 }
-
