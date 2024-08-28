@@ -16,7 +16,7 @@ header {
     z-index: 1;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для шапки */
-    box-sizing: 0; /* Включить padding в ширину элемента */
+    box-sizing: 0px; /* Включить padding в ширину элемента */
     margin: 0px; /* Убираем внешний отступ */
 }
 
