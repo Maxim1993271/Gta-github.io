@@ -7,7 +7,7 @@ const refreshPage = () => {
 
 // Функция для показа кнопки "Наверх" и её обработчика
 const setupScrollToTopButton = () => {
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn'); // Убедитесь, что у вас правильный идентификатор кнопки
     if (!scrollToTopBtn) return; // Раннее завершение, если кнопка не найдена
 
     // Показ кнопки при прокрутке
@@ -32,13 +32,13 @@ const setupHeaderClick = () => {
     }
 };
 
+// Функция для открытия всплывающего окна
+const openPopup = () => {
+    window.open("https://example.com", "popupWindow", "width=600,height=400,scrollbars=yes");
+};
+
 // Инициализация функций при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     setupHeaderClick();
     setupScrollToTopButton();
 });
-<script>
-        function openPopup() {
-            window.open("https://example.com", "popupWindow", "width=600,height=400,scrollbars=yes");
-        }
-    </script>
