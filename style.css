@@ -29,7 +29,7 @@ header {
     width: 100%;
     margin: 0 auto; /* Центрирование контейнера по горизонтали */
     padding: 0px; /* Убираем внутренние отступы, если они есть */
-    box-sizing: border-box;
+    box-sizing: 0px;
 }
 
 
