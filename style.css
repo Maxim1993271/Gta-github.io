@@ -16,20 +16,24 @@ header {
     z-index: 1;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для шапки */
-    box-sizing: border-box; /* Включить padding в ширину элемента */
-    margin-right: 20px; /* Добавить отступ справа для смещения влево */
+    box-sizing: 0; /* Включить padding в ширину элемента */
+    margin: 0px; /* Убираем внешний отступ */
 }
 
+/* Основной контейнер в шапке */
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+    padding: 0px; /* Убираем внутренние отступы, если они есть */
     box-sizing: border-box;
 }
 
+
+/* Заголовок сайта */
 .site-title {
     margin: 0;
     font-size: 2rem;
@@ -38,10 +42,12 @@ header {
     letter-spacing: 1px;
 }
 
+/* Стили для навигации */
 nav {
     flex: 1;
 }
 
+/* Стили для списка навигации */
 .nav-list {
     list-style: none;
     padding: 0;
@@ -51,10 +57,7 @@ nav {
     gap: 15px;
 }
 
-.nav-list li {
-    margin: 0;
-}
-
+/* Стили для ссылок навигации */
 .nav-list a {
     color: #fff;
     text-decoration: none;
@@ -71,6 +74,7 @@ nav {
     color: #fff;
 }
 
+/* Иконки социальных сетей */
 .social-icons {
     display: flex;
     gap: 10px;
@@ -85,11 +89,6 @@ nav {
 .social-icons a:hover .social-icon {
     opacity: 0.8;
     transform: scale(1.1);
-}
-
-/* Опционально: можно добавить стили для доступности */
-.social-icons a {
-    display: inline-block;
 }
 
 /* Стили для контентной области */
@@ -167,6 +166,7 @@ footer {
     width: 100%;
 }
 
+/* Стили для списка без маркеров */
 .custom-list {
     padding-left: 20px; /* Отступ слева для списка */
 }
@@ -190,7 +190,7 @@ ul.no-bullets li {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: /* Укажите цвет фона */
+    background-color: /* Укажите цвет фона */;
     text-align: center;
 }
 
@@ -208,29 +208,6 @@ ul.no-bullets li {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
-
-/* Стили для кнопок "Download" */
-.btn-download {
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 20px;
-    background: #FE8B16;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 20px;
-}
-
-/* Стили для кнопок "Download" при наведении */
-.btn-download:hover {
-    background: #e67e22; /* Обновленный цвет фона при наведении */
-}
-
-/* Стили для списков без маркеров */
-.no-bullets {
-    list-style: none;
-    padding: 0;
-}
-/* style.css */
 
 /* Стили для кнопки скроллинга вверх */
 .scroll-to-top {
@@ -283,11 +260,19 @@ ul.no-bullets li {
     animation: pulse 1s infinite;
 }
 
-/* Мобильные устройства */
+/* Медиа-запросы для мобильных устройств */
 @media (max-width: 768px) {
     header {
-        margin-right: 0; /* Убираем отступ справа на мобильных устройствах */
-        padding: 10px; /* Можно также уменьшить внутренние отступы для мобильных устройств, если нужно */
+        padding: 10px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
     }
 
     .nav-list {
@@ -295,14 +280,8 @@ ul.no-bullets li {
         gap: 10px;
     }
 
-    .social-icons {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .marquee-text {
-        font-size: 1.2rem;
-        padding: 5px 0;
+    .nav-list a {
+        padding: 8px 12px;
     }
 
     .btn-download {
@@ -310,9 +289,22 @@ ul.no-bullets li {
         font-size: 16px;
     }
 
+    .game-container,
+    .project-info {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .marquee-text {
+        font-size: 1.2rem;
+    }
+
     .scroll-to-top {
         width: 50px;
         height: 50px;
+    }
+
+    .scroll-to-top i {
         font-size: 20px;
     }
 }
