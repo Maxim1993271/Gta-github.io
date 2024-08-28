@@ -17,7 +17,7 @@ header {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для шапки */
     box-sizing: border-box; /* Включить padding в ширину элемента */
-    margin-right: 0px; /* Добавить отступ справа для смещения влево */
+    margin-right: 20px; /* Добавить отступ справа для смещения влево */
 }
 
 .header-content {
