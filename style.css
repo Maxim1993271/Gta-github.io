@@ -16,8 +16,8 @@ header {
     z-index: 1;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для шапки */
-    box-sizing: 0px; /* Включить padding в ширину элемента */
-    margin: 0px; /* Убираем внешний отступ */
+    box-sizing: border-box; /* Исправлено: Включить padding и border в ширину элемента */
+    margin: 0; /* Убираем внешний отступ */
 }
 
 /* Основной контейнер в шапке */
@@ -28,10 +28,9 @@ header {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    padding: 0px; /* Убираем внутренние отступы, если они есть */
-    box-sizing: 0px;
+    padding: 0; /* Убираем внутренние отступы, если они есть */
+    box-sizing: border-box; /* Исправлено: Включить padding и border в ширину элемента */
 }
-
 
 /* Заголовок сайта */
 .site-title {
@@ -127,11 +126,11 @@ main {
     display: inline-block; /* Выравнивание списка по центру */
 }
 
-ul.mods-list li {
+.mods-list li {
     margin-bottom: 10px; /* Добавляем пробел между элементами списка */
 }
 
-ul.mods-list li a {
+.mods-list li a {
     text-decoration: none; /* Убирает подчеркивание ссылок */
     color: inherit; /* Наследует цвет текста от родительского элемента */
 }
@@ -158,12 +157,16 @@ ul.mods-list li a {
 
 /* Стили для подвала */
 footer {
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    margin: 0;
     padding: 10px;
-    text-align: center;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
     position: relative;
     bottom: 0;
-    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 /* Стили для списка без маркеров */
@@ -175,13 +178,13 @@ footer {
     margin-bottom: 15px; /* Пробел между элементами списка */
 }
 
-ul.no-bullets {
+.no-bullets {
     list-style-type: none; /* Убирает маркеры */
     padding: 0; /* Убирает отступы */
     margin: 0; /* Убирает внешние отступы */
 }
 
-ul.no-bullets li {
+.no-bullets li {
     margin-bottom: 10px; /* Добавляет отступ между элементами списка, если нужно */
 }
 
@@ -190,7 +193,7 @@ ul.no-bullets li {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: /* Укажите цвет фона */;
+    background-color: rgba(0, 0, 0, 0); /* Полностью прозрачный фон */
     text-align: center;
 }
 
