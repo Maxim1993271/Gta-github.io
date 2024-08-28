@@ -1,5 +1,3 @@
-// script.js
-
 // Функция для обновления страницы
 const refreshPage = () => {
     window.location.reload();
@@ -39,18 +37,27 @@ const openPopup = () => {
     const name = "popupWindow";
     const features = "width=600,height=400,scrollbars=yes";
 
-    // Попытка открыть окно
-    const popupWindow = window.open(url, name, features);
+    try {
+        // Попытка открыть окно
+        const popupWindow = window.open(url, name, features);
 
-    // Проверка, что окно успешно открылось
-    if (!popupWindow) {
-        alert("Не удалось открыть всплывающее окно. Проверьте настройки блокировки всплывающих окон.");
+        // Проверка, что окно успешно открылось
+        if (!popupWindow || popupWindow.closed || typeof popupWindow.closed === 'undefined') {
+            alert("Не удалось открыть всплывающее окно. Проверьте настройки блокировки всплывающих окон.");
+        }
+    } catch (e) {
+        alert("Не удалось открыть всплывающее окно: " + e.message);
     }
 };
-
 
 // Инициализация функций при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
     setupHeaderClick();
     setupScrollToTopButton();
+
+    // Добавление обработчика клика для кнопки открытия всплывающего окна
+    const openPopupBtn = document.getElementById('openPopupBtn');
+    if (openPopupBtn) {
+        openPopupBtn.addEventListener('click', openPopup);
+    }
 });
