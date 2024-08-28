@@ -2,33 +2,38 @@
 
 // Функция для обновления страницы
 function refreshPage() {
-    window.location.reload(); // Перезагружает текущую страницу
+    window.location.reload();
 }
 
-// Добавляем обработчик клика к заголовку
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header'); // Предполагается, что ваш заголовок находится в теге <header>
+// Функция для показа кнопки "Наверх" и её обработчика
+function setupScrollToTopButton() {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            scrollToTopBtn.classList.toggle('show', window.scrollY > 300);
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
+
+// Функция для добавления обработчика клика к заголовку
+function setupHeaderClick() {
+    const header = document.querySelector('header');
+
     if (header) {
         header.addEventListener('click', refreshPage);
     }
-});
-// script.js
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 300) { // Показываем кнопку после прокрутки на 300px
-            scrollToTopBtn.classList.add('show');
-        } else {
-            scrollToTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
+// Инициализация функций при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    setupHeaderClick();
+    setupScrollToTopButton();
 });
