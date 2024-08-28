@@ -229,3 +229,55 @@ ul.no-bullets li {
     list-style: none;
     padding: 0;
 }
+/* style.css */
+
+/* Стили для кнопки скроллинга вверх */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #FE8B16, #F5A623); /* Новый градиентный фон с цветом #FE8B16 */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.scroll-to-top i {
+    font-size: 24px; /* Размер иконки */
+}
+
+.scroll-to-top:hover {
+    background: linear-gradient(135deg, #F5A623, #FE8B16); /* Инвертированный градиент при наведении */
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Анимация кнопки */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scroll-to-top.show:hover {
+    animation: pulse 1s infinite;
+}

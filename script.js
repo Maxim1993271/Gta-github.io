@@ -12,3 +12,23 @@ document.addEventListener('DOMContentLoaded', () => {
         header.addEventListener('click', refreshPage);
     }
 });
+// script.js
+
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 300) { // Показываем кнопку после прокрутки на 300px
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
