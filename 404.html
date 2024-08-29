@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
-	<link rel="stylesheet" href="style.css">
-	 <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
             padding: 50px;
             background-color: #f4f4f4;
             color: #333;
+            margin: 0;
         }
         h1 {
             font-size: 2em;
@@ -29,11 +30,17 @@
         a:hover {
             text-decoration: underline;
         }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Sorry, the page you are looking for does not exist.</p>
-    <p><a href="/">Go back to the homepage</a></p>
+    <div class="container">
+        <h1>404 - Page Not Found</h1>
+        <p>Sorry, the page you are looking for does not exist.</p>
+        <p><a href="/">Go back to the homepage</a></p>
+    </div>
 </body>
 </html>
