@@ -1,6 +1,10 @@
 // Функция для обновления страницы
 const refreshPage = () => {
-    window.location.reload();
+    try {
+        window.location.reload();
+    } catch (e) {
+        console.error("Ошибка при перезагрузке страницы:", e.message);
+    }
 };
 
 // Функция для показа кнопки "Наверх" и её обработчика
@@ -26,7 +30,13 @@ const setupScrollToTopButton = () => {
 const setupHeaderClick = () => {
     const header = document.querySelector('header');
     if (header) {
-        header.addEventListener('click', refreshPage);
+        header.addEventListener('click', () => {
+            try {
+                refreshPage();
+            } catch (e) {
+                console.error("Ошибка при клике на заголовок:", e.message);
+            }
+        });
     }
 };
 
@@ -37,12 +47,10 @@ const openPopup = () => {
     const features = "width=600,height=400,scrollbars=yes";
 
     try {
-        // Открываем окно
         const popupWindow = window.open(url, name, features);
 
-        // Проверяем, успешно ли открыто окно
-        if (popupWindow && !popupWindow.closed && typeof popupWindow.closed !== 'undefined') {
-            popupWindow.focus(); // Делаем окно активным
+        if (popupWindow && popupWindow.focus) {
+            popupWindow.focus();
         } else {
             console.error("Не удалось открыть всплывающее окно. Проверьте настройки блокировки всплывающих окон.");
         }
@@ -53,12 +61,16 @@ const openPopup = () => {
 
 // Инициализация функций при загрузке страницы
 document.addEventListener('DOMContentLoaded', () => {
-    setupHeaderClick();
-    setupScrollToTopButton();
+    try {
+        setupHeaderClick();
+        setupScrollToTopButton();
 
-    // Добавление обработчика клика для кнопки открытия всплывающего окна
-    const openPopupBtn = document.getElementById('openPopupBtn');
-    if (openPopupBtn) {
-        openPopupBtn.addEventListener('click', openPopup);
+        // Добавление обработчика клика для кнопки открытия всплывающего окна
+        const openPopupBtn = document.getElementById('openPopupBtn');
+        if (openPopupBtn) {
+            openPopupBtn.addEventListener('click', openPopup);
+        }
+    } catch (e) {
+        console.error("Ошибка при инициализации функций:", e.message);
     }
 });
