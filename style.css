@@ -62,11 +62,12 @@ nav {
     padding: 10px 15px;
     border-radius: 20px;
     background-color: #FE8B16;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .nav-list a:hover {
     background-color: #e67e22;
+    transform: scale(1.05);
 }
 
 /* Иконки социальных сетей */
@@ -147,7 +148,7 @@ main {
 
 .btn-download:hover {
     background: linear-gradient(135deg, #F5A623, #FE8B16);
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
@@ -159,8 +160,6 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 100%;
     box-sizing: border-box;
-    position: relative;
-    bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
@@ -219,7 +218,7 @@ footer {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .scroll-to-top i {
@@ -228,6 +227,7 @@ footer {
 
 .scroll-to-top:hover {
     background: linear-gradient(135deg, #F5A623, #FE8B16);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .scroll-to-top.show {
@@ -292,4 +292,21 @@ footer {
     .scroll-to-top i {
         font-size: 20px;
     }
+}
+
+/* Дополнительные улучшения для визуальных эффектов */
+.shadow-soft {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-medium {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.shadow-strong {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.transition {
+    transition: all 0.3s ease-in-out;
 }
