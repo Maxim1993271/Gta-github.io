@@ -31,30 +31,32 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: url('https://kartinki.pics/uploads/posts/2021-07/1625682359_2-kartinkin-com-p-gta-san-andreas-oboi-krasivie-2.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--text-color);
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* Темная/светлая тема переключатель */
 .theme-toggle {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     background: var(--primary-color);
     color: var(--text-color);
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: var(--shadow-light);
     transition: background 0.3s, box-shadow 0.3s;
+    font-size: 24px;
 }
 
 .theme-toggle:hover {
@@ -64,7 +66,6 @@ body {
 
 .theme-toggle::before {
     content: '🌙'; /* Иконка для темной темы */
-    font-size: 18px;
 }
 
 [data-theme='light'] .theme-toggle::before {
@@ -74,12 +75,13 @@ body {
 /* Стили для шапки сайта */
 header {
     background: var(--header-background);
-    padding: 10px 20px;
+    padding: 15px 25px;
     position: relative;
     z-index: 1;
     width: 100%;
     box-shadow: var(--shadow-medium);
     box-sizing: border-box;
+    transition: background 0.3s;
 }
 
 /* Основной контейнер в шапке */
@@ -90,17 +92,16 @@ header {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-    padding: 0;
     box-sizing: border-box;
 }
 
 /* Заголовок сайта */
 .site-title {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-color);
     font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 /* Стили для навигации */
@@ -114,33 +115,35 @@ nav {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 .nav-list a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 12px 20px;
+    border-radius: 25px;
     background-color: var(--primary-color);
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow-light);
 }
 
 .nav-list a:hover {
-    background-color: #e67e22;
+    background-color: var(--secondary-color);
     transform: scale(1.05);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Иконки социальных сетей */
 .social-icons {
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 .social-icon {
-    font-size: 24px;
+    font-size: 26px;
     color: var(--text-color);
     transition: opacity 0.3s, transform 0.3s;
 }
@@ -152,7 +155,7 @@ nav {
 
 /* Стили для контентной области */
 main {
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,12 +165,12 @@ main {
 .game-container,
 .project-info {
     background: var(--background-color);
-    padding: 20px;
+    padding: 25px;
     border-radius: var(--border-radius);
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     box-shadow: var(--shadow-medium);
 }
 
@@ -180,8 +183,8 @@ main {
 }
 
 .card:hover {
-    box-shadow: var(--shadow-medium);
-    transform: translateY(-5px);
+    box-shadow: var(--shadow-dark);
+    transform: translateY(-8px);
 }
 
 .card img {
@@ -200,7 +203,7 @@ main {
 }
 
 .mods-list li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .mods-list li a {
@@ -211,9 +214,9 @@ main {
 /* Стили для кнопок "Download" */
 .btn-download {
     display: inline-block;
-    padding: 12px 24px;
-    margin-top: 10px;
-    font-size: 18px;
+    padding: 14px 28px;
+    margin-top: 15px;
+    font-size: 20px;
     color: var(--text-color);
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     text-decoration: none;
@@ -231,13 +234,14 @@ main {
 /* Стили для подвала */
 footer {
     margin: 0;
-    padding: 10px;
+    padding: 15px;
     border: none;
     box-shadow: var(--shadow-medium);
     width: 100%;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     text-align: center;
+    color: var(--text-color);
 }
 
 /* Стили для списка без маркеров */
@@ -250,7 +254,7 @@ footer {
 
 .custom-list li,
 .no-bullets li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* Основные стили для контейнера с бегущей строкой */
@@ -266,8 +270,9 @@ footer {
 .marquee-text {
     display: inline-block;
     white-space: nowrap;
-    padding: 10px 0;
+    padding: 12px 0;
     animation: marquee 30s linear infinite;
+    font-size: 1.4rem;
 }
 
 /* Анимация бегущей строки */
@@ -285,8 +290,8 @@ footer {
     color: var(--text-color);
     border: none;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -295,10 +300,11 @@ footer {
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 0.3s, transform 0.3s;
+    font-size: 28px;
 }
 
 .scroll-to-top i {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .scroll-to-top:hover {
@@ -339,7 +345,7 @@ footer {
     }
 
     .site-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .nav-list {
@@ -348,18 +354,55 @@ footer {
     }
 
     .nav-list a {
-        padding: 8px 12px;
+        padding: 8px 14px;
+        font-size: 1rem;
+    }
+
+    .btn-download {
+        padding: 12px 22px;
+        font-size: 18px;
+    }
+
+    .game-container,
+    .project-info {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .marquee-text {
+        font-size: 1.4rem;
+    }
+
+    .scroll-to-top {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .scroll-to-top i {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+
+    .nav-list a {
+        padding: 6px 10px;
+        font-size: 0.9rem;
     }
 
     .btn-download {
         padding: 10px 20px;
         font-size: 16px;
-    }
-
-    .game-container,
-    .project-info {
-        padding: 15px;
-        border-radius: 10px;
     }
 
     .marquee-text {
@@ -369,6 +412,7 @@ footer {
     .scroll-to-top {
         width: 50px;
         height: 50px;
+        font-size: 20px;
     }
 
     .scroll-to-top i {
