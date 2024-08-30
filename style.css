@@ -1,15 +1,30 @@
-/* Переменные */
+/* Переменные для темы */
 :root {
     --primary-color: #FE8B16;
     --secondary-color: #F5A623;
     --background-color: rgba(0, 0, 0, 0.8);
     --text-color: #fff;
+    --card-background: #333;
+    --header-background: rgba(0, 0, 0, 0.7);
+    --border-radius: 15px;
+    --transition: all 0.3s ease-in-out;
     --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
     --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
     --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
-    --transition: all 0.3s ease-in-out;
-    --border-radius: 15px;
-    --max-width: 1200px;
+}
+
+/* Переменные для темной и светлой темы */
+[data-theme='dark'] {
+    --background-color: rgba(0, 0, 0, 0.9);
+    --card-background: #222;
+    --header-background: rgba(0, 0, 0, 0.8);
+}
+
+[data-theme='light'] {
+    --background-color: #f4f4f4;
+    --card-background: #fff;
+    --header-background: rgba(255, 255, 255, 0.9);
+    --text-color: #333;
 }
 
 /* Основной стиль для всего сайта */
@@ -20,12 +35,45 @@ body {
     background: url('https://kartinki.pics/uploads/posts/2021-07/1625682359_2-kartinkin-com-p-gta-san-andreas-oboi-krasivie-2.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--text-color);
-    overflow-x: hidden; /* Убираем горизонтальный скролл */
+    overflow-x: hidden;
+}
+
+/* Темная/светлая тема переключатель */
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-light);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.theme-toggle:hover {
+    background: var(--secondary-color);
+    box-shadow: var(--shadow-medium);
+}
+
+.theme-toggle::before {
+    content: '🌙'; /* Иконка для темной темы */
+    font-size: 18px;
+}
+
+[data-theme='light'] .theme-toggle::before {
+    content: '🌞'; /* Иконка для светлой темы */
 }
 
 /* Стили для шапки сайта */
 header {
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--header-background);
     padding: 10px 20px;
     position: relative;
     z-index: 1;
@@ -39,7 +87,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     width: 100%;
     padding: 0;
@@ -123,10 +171,23 @@ main {
     box-shadow: var(--shadow-medium);
 }
 
-.game-image {
+/* Карточки */
+.card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px);
+}
+
+.card img {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
 }
 
 /* Стили для списка модов */
@@ -230,10 +291,10 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: var(--shadow-light);
+    box-shadow: var(--shadow-medium);
     opacity: 0;
     transform: translateY(100px);
-    transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
 }
 
 .scroll-to-top i {
@@ -242,7 +303,6 @@ footer {
 
 .scroll-to-top:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    box-shadow: var(--shadow-medium);
 }
 
 .scroll-to-top.show {
@@ -252,8 +312,15 @@ footer {
 
 /* Анимация кнопки */
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .scroll-to-top.show:hover {
@@ -307,23 +374,4 @@ footer {
     .scroll-to-top i {
         font-size: 20px;
     }
-}
-
-/* Дополнительные стили для новых эффектов и улучшений */
-.card {
-    background: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-light);
-    transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.card:hover {
-    box-shadow: var(--shadow-medium);
-    transform: translateY(-5px);
-}
-
-.card img {
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
-    max-width: 100%;
-    height: auto;
 }
