@@ -10,14 +10,13 @@ body {
 
 /* Стили для шапки сайта */
 header {
-    background: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px 20px;
     position: relative;
     z-index: 1;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Тень для шапки */
-    box-sizing: border-box; /* Исправлено: Включить padding и border в ширину элемента */
-    margin: 0; /* Убираем внешний отступ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
 
 /* Основной контейнер в шапке */
@@ -26,18 +25,18 @@ header {
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
+    margin: 0 auto;
     width: 100%;
-    margin: 0 auto; /* Центрирование контейнера по горизонтали */
-    padding: 0; /* Убираем внутренние отступы, если они есть */
-    box-sizing: border-box; /* Исправлено: Включить padding и border в ширину элемента */
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Заголовок сайта */
 .site-title {
     margin: 0;
     font-size: 2rem;
-    color: #FE8B16; /* Цвет заголовка */
-    font-family: 'Roboto', sans-serif; /* Шрифт для заголовка */
+    color: #FE8B16;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -46,7 +45,6 @@ nav {
     flex: 1;
 }
 
-/* Стили для списка навигации */
 .nav-list {
     list-style: none;
     padding: 0;
@@ -56,21 +54,19 @@ nav {
     gap: 15px;
 }
 
-/* Стили для ссылок навигации */
 .nav-list a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     padding: 10px 15px;
-    border-radius: 20px; /* Закругление кнопок навигации */
-    background-color: #FE8B16; /* Цвет фона кнопок навигации */
+    border-radius: 20px;
+    background-color: #FE8B16;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-list a:hover {
-    background-color: #e67e22; /* Цвет фона при наведении */
-    color: #fff;
+    background-color: #e67e22;
 }
 
 /* Иконки социальных сетей */
@@ -101,14 +97,14 @@ main {
 /* Контейнер для информации о игре */
 .game-container,
 .project-info {
-    background: rgba(0, 0, 0, 0.8); /* Сделать фон более темным */
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
-    border-radius: 15px; /* Более округлые углы */
+    border-radius: 15px;
     max-width: 800px;
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Более заметная тень */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .game-image {
@@ -119,38 +115,38 @@ main {
 
 /* Стили для списка модов */
 .mods-list {
-    list-style-type: none; /* Убираем маркеры */
-    padding: 0; /* Убираем отступы */
-    margin: 0; /* Убираем внешние отступы */
-    text-align: left; /* Выравнивание текста по левому краю */
-    display: inline-block; /* Выравнивание списка по центру */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    display: inline-block;
 }
 
 .mods-list li {
-    margin-bottom: 10px; /* Добавляем пробел между элементами списка */
+    margin-bottom: 10px;
 }
 
 .mods-list li a {
-    text-decoration: none; /* Убирает подчеркивание ссылок */
-    color: inherit; /* Наследует цвет текста от родительского элемента */
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Стили для кнопок "Download" */
 .btn-download {
     display: inline-block;
-    padding: 12px 24px; /* Увеличенные размеры кнопок */
+    padding: 12px 24px;
     margin-top: 10px;
     font-size: 18px;
-    color: #fff; /* Цвет текста кнопки */
-    background: linear-gradient(135deg, #FE8B16, #F5A623); /* Градиентный фон */
+    color: #fff;
+    background: linear-gradient(135deg, #FE8B16, #F5A623);
     text-decoration: none;
-    border-radius: 25px; /* Более округлые углы */
+    border-radius: 25px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
 }
 
 .btn-download:hover {
-    background: linear-gradient(135deg, #F5A623, #FE8B16); /* Инвертированный градиент при наведении */
+    background: linear-gradient(135deg, #F5A623, #FE8B16);
     transform: scale(1.1);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
@@ -170,22 +166,15 @@ footer {
 }
 
 /* Стили для списка без маркеров */
-.custom-list {
-    padding-left: 20px; /* Отступ слева для списка */
-}
-
-.custom-list li {
-    margin-bottom: 15px; /* Пробел между элементами списка */
-}
-
+.custom-list,
 .no-bullets {
-    list-style-type: none; /* Убирает маркеры */
-    padding: 0; /* Убирает отступы */
-    margin: 0; /* Убирает внешние отступы */
+    padding-left: 20px;
+    margin: 0;
 }
 
+.custom-list li,
 .no-bullets li {
-    margin-bottom: 10px; /* Добавляет отступ между элементами списка, если нужно */
+    margin-bottom: 10px;
 }
 
 /* Основные стили для контейнера с бегущей строкой */
@@ -193,7 +182,7 @@ footer {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: rgba(0, 0, 0, 0); /* Полностью прозрачный фон */
+    background-color: rgba(0, 0, 0, 0);
     text-align: center;
 }
 
@@ -217,7 +206,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #FE8B16, #F5A623); /* Новый градиентный фон с цветом #FE8B16 */
+    background: linear-gradient(135deg, #FE8B16, #F5A623);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -234,11 +223,11 @@ footer {
 }
 
 .scroll-to-top i {
-    font-size: 24px; /* Размер иконки */
+    font-size: 24px;
 }
 
 .scroll-to-top:hover {
-    background: linear-gradient(135deg, #F5A623, #FE8B16); /* Инвертированный градиент при наведении */
+    background: linear-gradient(135deg, #F5A623, #FE8B16);
 }
 
 .scroll-to-top.show {
@@ -248,15 +237,8 @@ footer {
 
 /* Анимация кнопки */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
 .scroll-to-top.show:hover {
