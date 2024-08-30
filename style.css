@@ -1,3 +1,15 @@
+/* Переменные */
+:root {
+    --primary-color: #FE8B16;
+    --secondary-color: #F5A623;
+    --background-color: rgba(0, 0, 0, 0.8);
+    --text-color: #fff;
+    --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.4);
+    --transition: all 0.3s ease-in-out;
+}
+
 /* Основной стиль для всего сайта */
 body {
     margin: 0;
@@ -5,7 +17,7 @@ body {
     font-family: Arial, sans-serif;
     background: url('https://kartinki.pics/uploads/posts/2021-07/1625682359_2-kartinkin-com-p-gta-san-andreas-oboi-krasivie-2.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
+    color: var(--text-color);
 }
 
 /* Стили для шапки сайта */
@@ -15,7 +27,7 @@ header {
     position: relative;
     z-index: 1;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-medium);
     box-sizing: border-box;
 }
 
@@ -35,7 +47,7 @@ header {
 .site-title {
     margin: 0;
     font-size: 2rem;
-    color: #FE8B16;
+    color: var(--primary-color);
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
 }
@@ -55,13 +67,13 @@ nav {
 }
 
 .nav-list a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 20px;
-    background-color: #FE8B16;
+    background-color: var(--primary-color);
     transition: background-color 0.3s, transform 0.3s;
 }
 
@@ -78,7 +90,7 @@ nav {
 
 .social-icon {
     font-size: 24px;
-    color: #fff;
+    color: var(--text-color);
     transition: opacity 0.3s, transform 0.3s;
 }
 
@@ -98,14 +110,14 @@ main {
 /* Контейнер для информации о игре */
 .game-container,
 .project-info {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--background-color);
     padding: 20px;
     border-radius: 15px;
     max-width: 800px;
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-medium);
 }
 
 .game-image {
@@ -138,18 +150,18 @@ main {
     padding: 12px 24px;
     margin-top: 10px;
     font-size: 18px;
-    color: #fff;
-    background: linear-gradient(135deg, #FE8B16, #F5A623);
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     text-decoration: none;
     border-radius: 25px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-light);
     transition: background 0.4s, transform 0.4s, box-shadow 0.4s;
 }
 
 .btn-download:hover {
-    background: linear-gradient(135deg, #F5A623, #FE8B16);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Стили для подвала */
@@ -157,7 +169,7 @@ footer {
     margin: 0;
     padding: 10px;
     border: none;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-medium);
     width: 100%;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.5);
@@ -181,7 +193,7 @@ footer {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     text-align: center;
 }
 
@@ -191,7 +203,6 @@ footer {
     white-space: nowrap;
     padding: 10px 0;
     animation: marquee 30s linear infinite;
-    width: 100%;
 }
 
 /* Анимация бегущей строки */
@@ -205,8 +216,8 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: linear-gradient(135deg, #FE8B16, #F5A623);
-    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
     border: none;
     border-radius: 50%;
     width: 60px;
@@ -215,7 +226,7 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-light);
     opacity: 0;
     transform: translateY(100px);
     transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -226,8 +237,8 @@ footer {
 }
 
 .scroll-to-top:hover {
-    background: linear-gradient(135deg, #F5A623, #FE8B16);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    box-shadow: var(--shadow-medium);
 }
 
 .scroll-to-top.show {
@@ -295,18 +306,18 @@ footer {
 }
 
 /* Дополнительные улучшения для визуальных эффектов */
-.shadow-soft {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.shadow-light {
+    box-shadow: var(--shadow-light);
 }
 
 .shadow-medium {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-medium);
 }
 
-.shadow-strong {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+.shadow-dark {
+    box-shadow: var(--shadow-dark);
 }
 
 .transition {
-    transition: all 0.3s ease-in-out;
+    transition: var(--transition);
 }
