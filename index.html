@@ -32,7 +32,14 @@
     <link rel="icon" href="icon.ico" type="image/x-icon">
 
     <!-- Скрипт -->
-    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var title = document.getElementById('site-title');
+            title.addEventListener('click', function() {
+                location.reload();
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -158,10 +165,10 @@
                         <p>ASI Plugins Pack for Grand Theft Auto: San Andreas.</p>
                         <a href="https://github.com/Maxim1993271/GTA/releases/download/Asi/Asi.Plugins.rar" class="btn btn-download">Download ASI Plugins</a>
                     </li>
-                    </ol>
-                </div>
+                </ol>
             </div>
-        </section>
+        </div>
+    </section>
     </main>
 
     <footer>
